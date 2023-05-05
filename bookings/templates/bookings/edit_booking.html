@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row">
+  {% if user.is_authenticated %}
+  <div class="booking-form col-md-6">
+    <h2>Edit Booking</h2>
+    <p class="text-center">
+        We accept bookings from  <br>  
+        Wednesday to Sunday<br>
+        5pm to 9pm<br>
+        <u>Subject to Availability</u>
+    </p>
+    <form method="POST" id="booking-form">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit">Update Booking</button>
+    </form>
+    
+  </div>
+  <div class="booking-list booking-form col-md-6">
+    <h3>My Bookings</h3>
+    {% for booking in current_bookings %}
+      {% if booking.user.id == request.user.id %}
+      <a href="{% url 'edit_booking' booking_id=booking.id %}" class="btn btn-primary">
+        {{ booking.start_time|date:"M d" }} at 
+        {{ booking.start_time|time:"g:i A" }} for 
+        {{ booking.size_of_party }}
+        {% if booking.size_of_party == 1 %} guest{% else %} guests{% endif %}
+      </a>
+      {% endif %}
+    {% empty %}
+      <p>You haven't made any bookings yet.</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
