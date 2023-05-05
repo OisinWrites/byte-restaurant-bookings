@@ -257,7 +257,7 @@ def bookings_management(request):
 
         """Order the bookings by user name,
             size of party, start time and date"""
-            
+
         bookings = bookings.order_by('user__username',
                                      'size_of_party', 'start_time')
 
