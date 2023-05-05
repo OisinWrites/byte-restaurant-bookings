@@ -1,1 +1,1 @@
-web: gunicorn byte-restaurant-bookings.wsgi
+web: gunicorn byte.wsgi
