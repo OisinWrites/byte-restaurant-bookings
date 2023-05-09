@@ -32,7 +32,6 @@ CLOUDINARY_API_KEY = os.environ.get('CLOUDINARY_API_KEY', '')
 CLOUDINARY_API_SECRET = os.environ.get('CLOUDINARY_API_SECRET', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 ALLOWED_HOSTS = ['brb2.herokuapp.com', 'localhost']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
