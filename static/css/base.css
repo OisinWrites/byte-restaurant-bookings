@@ -143,7 +143,7 @@ color:rgb(219, 83, 117) !important;
 .menu p, .book p, .contact p,
 .menu2 p, .book2 p, .contact2 p, .foot-icon,
 .footer-logo:hover {
-    background: url('/static/media/background.jpg') no-repeat center center fixed;
+    background: url('https://res.cloudinary.com/dwhennrjl/image/upload/v1683576203/static/media/background.3f4b707af26c.jpg') no-repeat center center fixed;
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
